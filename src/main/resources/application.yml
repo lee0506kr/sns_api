@@ -1,0 +1,31 @@
+spring:
+  #datasource:
+    #driver-class-name: org.postgresql.Driver
+    #url: jdbc:postgresql://rokidev.com:5432/postgres
+    #username: postgres
+    #password: test1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+
+logging:
+  level:
+    org.hibernate.SQLQuery: info
+    org.hibernate.type: trace
+    org.apache.tomcat: info
+    com.study.sns-api: debug
+    org.springframework.transaction: trace  # ???? ?? ???
+
+server:
+  port: 9000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
